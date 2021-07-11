@@ -45,7 +45,14 @@ function main() {
             clearInterval(game); // Stop updating!
         }
 
-        //ctx = grid.forEach((square) => square.draw(ctx));
+        grid.forEach((square) => {
+            let hit = square.checkCollisions(ball.position);
+            if (hit) {
+                ball.swapSpeed(hit);
+            }
+            ctx = square.draw(ctx)
+        });
+        /*
         for (let i = 0; i < grid.length; i++){
             let hit = grid[i].checkCollisions(ball.position);
             if (hit) {
@@ -53,6 +60,8 @@ function main() {
             }
             ctx = grid[i].draw(ctx);
         }
+
+        */
         ctx = paddle.draw(ctx);
         ctx = ball.draw(ctx);
     }, 100);
