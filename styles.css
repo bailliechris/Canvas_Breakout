@@ -1,0 +1,11 @@
+body {
+    background:linen;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+canvas { 
+    background: black; 
+    display: block; 
+    margin: 5px;
+    border:5px dotted limegreen;
+}
